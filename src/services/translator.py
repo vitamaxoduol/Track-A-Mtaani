@@ -6,10 +6,20 @@ import re
 
 ALLOCATION_SW = 'Huu ni mgao wa bajeti, si uthibitisho kwamba fedha zilitumika au kazi ilikamilika.'
 
+# Record-check dates are provenance, not evidence of current implementation.
+REVIEW_CONTEXT = {
+    'en': 'Review dates describe checks of budget records, not current project progress.',
+    'sw': 'Tarehe za ukaguzi zinahusu rekodi za bajeti, si maendeleo ya sasa ya mradi.',
+}
+NEXT_STEPS = {
+    'en': 'Next step: When asking for a project update, cite the project name, ward, financial year, allocation and source page shown. Ask for spending or completion evidence; this budget record alone cannot establish either.',
+    'sw': 'Hatua inayofuata: Unapoulizia maendeleo ya mradi, taja jina la mradi, wadi, mwaka wa fedha, mgao na ukurasa wa chanzo ulioonyeshwa. Omba ushahidi wa matumizi ya fedha au kukamilika kwa kazi; rekodi hii ya bajeti pekee haithibitishi hayo.',
+}
+
 # English templates are the keys so every translated response has a fixed source.
 MESSAGES = {
     'Your conversation has expired. Select your ward or send your question again.': 'Muda wa mazungumzo umeisha. Chagua wadi yako au tuma swali tena.',
-    'The pilot covers ten reviewed allocation records in Wamagana, Mweiga, and Kabaru for FY 2026/2027. Only the programme budget supplies project answers; the second document is registered for later review.': 'Jaribio linahusu rekodi kumi za mgao wa bajeti zilizokaguliwa katika Wamagana, Mweiga na Kabaru kwa mwaka wa fedha 2026/2027. Majibu ya miradi yanatoka kwenye bajeti ya programu pekee; hati ya pili imesajiliwa kwa mapitio ya baadaye.',
+    'The pilot covers fifteen reviewed allocation records in Wamagana, Mweiga, and Kabaru for FY 2026/2027. Only the programme budget supplies project answers; the second document is registered for later review.': 'Jaribio linahusu rekodi kumi na tano za mgao wa bajeti zilizokaguliwa katika Wamagana, Mweiga na Kabaru kwa mwaka wa fedha 2026/2027. Majibu ya miradi yanatoka kwenye bajeti ya programu pekee; hati ya pili imesajiliwa kwa mapitio ya baadaye.',
     'Choose a ward to start a project search.': 'Chagua wadi ili kuanza kutafuta miradi.',
     'You have reached the end of the matching records in our selected documents.': 'Umefika mwisho wa rekodi zinazolingana katika hati tulizochagua.',
     'Select a project from your current results, or search by ward again.': 'Chagua mradi kutoka kwenye matokeo ya sasa, au tafuta kwa wadi tena.',

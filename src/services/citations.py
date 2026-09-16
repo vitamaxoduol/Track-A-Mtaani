@@ -18,4 +18,5 @@ def citation(source: dict, observation: dict) -> dict:
         "pdf_page": page, "printed_page": observation["source_printed_page_label"],
         "excerpt": observation["source_excerpt"],
         "amount_heading": observation["source_amount_heading"],
+        "reviewed_date": observation["reviewed_date"],
     }

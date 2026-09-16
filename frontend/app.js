@@ -64,6 +64,7 @@ function projectCard(project) {
     source.append(element("span", "eyebrow", t("Official source")));
     source.append(sourceLink(`${citation.document_title} ↗`, citation.page_url));
     source.append(element("span", "source-page", language === "sw" ? `PDF ukurasa ${citation.pdf_page} · Ukurasa uliochapishwa ${citation.printed_page}` : `PDF page ${citation.pdf_page} · Printed page ${citation.printed_page}`));
+    source.append(element("span", "source-page", t("Record reviewed: ") + citation.reviewed_date));
     card.append(source);
     const details = element("details");
     details.append(element("summary", "", t("View details & evidence")));
@@ -142,6 +143,8 @@ async function sendMessage(payload, displayText) {
     result.projects.forEach((project) => reply.append(projectCard(project)));
     if (result.disclaimer) reply.append(element("p", "trust-note", result.disclaimer));
     if (result.projects.length) reply.append(element("p", "coverage-reminder", t(result.coverage.statement)));
+    if (result.review_context) reply.append(element("p", "coverage-reminder", result.review_context));
+    if (result.next_steps) reply.append(element("p", "trust-note next-steps", result.next_steps));
     if (result.choices.length) {
       const choices = element("div", "choices");
       result.choices.forEach((choice) => {

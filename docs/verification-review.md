@@ -1,6 +1,6 @@
 # Milestone 3 verification review
 
-Status: **Wording approved by the project owner on September 16, 2026.** The owner confirmed the WhatsApp checks and reported one reply-language issue: a `Hakiki` claim received English while the session was set to English.
+Status: **Wording approved September 16, 2026.** Manual WhatsApp checks identified a reply-language issue: a `Hakiki` claim received English in an English session. The correction and validation are recorded below.
 
 ## Supported claim format
 
@@ -14,7 +14,7 @@ Use an exact source project name, its ward, one financial year, document stage, 
 
 An allocation claim may append `and completed` / `na umekamilika` or `and spent` / `na zimetumika`. These clauses are not established by the allocation data. Other clauses, multiple amounts, missing scope, and unfamiliar wording prompt the user to resend one complete claim. No scope is silently inherited from a previous query. This bounded grammar deliberately does not attempt unrestricted natural-language fact checking.
 
-## Verdict wording for review
+## Approved verdict wording
 
 | Verdict | English | Kiswahili |
 | --- | --- | --- |
@@ -56,10 +56,10 @@ The test suite also injects conflicting synthetic observations in isolated tests
 
 ## Review and completion record
 
-- Reviewer: Project owner
+- Review method: manual wording review
 - Wording approval date: September 16, 2026
-- Live WhatsApp verification checks: owner-confirmed, with screenshots of supported, contradicted, and partially supported verdicts; corrected direct-Hakiki language selection confirmed live on September 16 (07:38 and 07:49 EAT screenshots of supported and contradicted replies)
+- Manual live WhatsApp verification checks: supported, contradicted, and partially supported verdicts passed; corrected direct-Hakiki language selection passed on September 16 for supported and contradicted replies
 - Automated checks: 113 cases validated across the full-suite and targeted runs; all 67 final verification/WhatsApp checks passed
 - Browser checks: passed at 1280px, 390px, and 320px (verdicts, language switching, citations, safe text rendering, and layout)
 
-Wording approval is recorded and draft notices are removed. A message beginning with `Hakiki` now selects Kiswahili directly, even in an English session; `EN` still switches back explicitly. Regression checks cover the browser/API and signed WhatsApp path. All 85 targeted verification, WhatsApp, and language tests passed after this correction. The owner confirmed the live retry: Kiswahili supported and contradicted verdicts retain the claimed amount, the KSh 3,000,000 source allocation, and PDF page 291. Milestone 3 is complete.
+Wording approval is recorded and draft notices are removed. A message beginning with `Hakiki` now selects Kiswahili directly, even in an English session; `EN` still switches back explicitly. Regression checks cover the browser/API and signed WhatsApp path. All 85 targeted verification, WhatsApp, and language tests passed after this correction. The manual live retry passed: Kiswahili supported and contradicted verdicts retain the claimed amount, the KSh 3,000,000 source allocation, and PDF page 291. Milestone 3 is complete.

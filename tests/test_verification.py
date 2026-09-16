@@ -11,6 +11,28 @@ from src.services.verification import parse_amount, verify_claim, verification_m
 BASE = 'Verify Kianjogu Karaihu in Wamagana FY 2026/2027 approved allocation KSh '
 
 
+@pytest.mark.parametrize('name,ward,amount,page', [
+    ('Kaiguri Gwa Karuga', 'Wamagana', '1000000.00', 291),
+    ('Kihuro rd', 'Wamagana', '2000000.00', 292),
+    ('Kanyamati', 'Wamagana', '2400000.00', 292),
+    ('Jambo Zaina Box Culvert', 'Kabaru', '4000000.00', 296),
+    ('Supporting water projects', 'Mweiga', '2000000.00', 282),
+])
+def test_m4_reviewed_allocations_preserve_evidence_in_both_languages(client, name, ward, amount, page):
+    en = ask(client, f'Verify {name} in {ward} FY 2026/2027 approved allocation KSh {amount}')
+    sw = ask(client, f'Hakiki {name} katika {ward} mwaka wa fedha 2026/2027 iliyoidhinishwa mgao KSh {amount}')
+    assert en['projects'] == sw['projects']
+    assert en['language'] == 'en' and sw['language'] == 'sw'
+    for result in [en, sw]:
+        assert result['verification']['verdict'] == 'SUPPORTED'
+        observation = result['projects'][0]['observations'][0]
+        assert observation['amount_kes'] == amount
+        assert observation['citation']['pdf_page'] == page
+        rendered = format_whatsapp(ChatResponse.model_validate(result), first_use=True)
+        assert len(rendered) <= 1600
+        assert observation['citation']['url'] in rendered
+
+
 def ask(client, text, **kwargs):
     r = client.post('/api/v1/chat', json={'message': text, **kwargs})
     assert r.status_code == 200, r.text

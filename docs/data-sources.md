@@ -2,24 +2,26 @@
 
 ## Current evidence inventory
 
-Pilot selected: **Nyeri County, FY 2026/2027**, covering selected records in **Wamagana, Mweiga, and Kabaru**. Its approved programme budget provides project descriptions, explicit KES amounts, financial years, and wards in the same table. The owner authorized selecting the county with the clearest official evidence.
+Pilot selected: **Nyeri County, FY 2026/2027**, covering selected records in **Wamagana, Mweiga, and Kabaru**. Its approved programme budget provides project descriptions, explicit KES amounts, financial years, and wards in the same table.
 
 Two official PDFs were downloaded on September 14, 2026 from the [county budget index](https://www.nyeri.go.ke/bud/):
 
 | Source | Local snapshot | Use |
 | --- | --- | --- |
-| [Approved Programme Based Budget 2026/27](https://www.nyeri.go.ke/wp-content/uploads/2026/07/APPROVED-PBB-for-FY-2026-27.pdf) | [county-budget.pdf](../data/raw/county-budget.pdf) | Ten reviewed observations on PDF pages 278, 287, 291, and 292 |
+| [Approved Programme Based Budget 2026/27](https://www.nyeri.go.ke/wp-content/uploads/2026/07/APPROVED-PBB-for-FY-2026-27.pdf) | [county-budget.pdf](../data/raw/county-budget.pdf) | Fifteen reviewed observations on PDF pages 278, 282, 287, 291, 292, and 296 |
 | [Approved Budget Estimates 2026/27](https://www.nyeri.go.ke/wp-content/uploads/2026/07/Approved-UPLOADED-Budget-Estimates-2026-27.pdf) | [nyeri-approved-estimates-2026-27.pdf](../data/raw/nyeri-approved-estimates-2026-27.pdf) | Supporting document registered; no project observations extracted or corroboration claimed |
 
-Checksums and provenance are stored alongside the ten records in [projects.json](../data/processed/projects.json). Codex checked each candidate against rendered source pages. **The project owner confirmed review and approval on September 14, 2026.** All ten observations now have `REVIEWED` status, reviewer attribution, and a review date. The matching [demo seed](../data/seeds/demo_projects.json) supplies the running SQLite dataset; milestone 0 is complete.
+Checksums and provenance are stored alongside the fifteen records in [projects.json](../data/processed/projects.json). Each candidate was checked against rendered source pages. **Manual source review: the first ten records were approved September 14 and the five M4 additions September 16, 2026.** All fifteen observations have `REVIEWED` status, reviewer attribution, and a review date. The matching [demo seed](../data/seeds/demo_projects.json) supplies the running SQLite dataset; milestone 0 is complete.
 
 The initial Kakamega assembly candidate was not selected because its cover and foreword/footer years conflict. No records from that document or from the original idea's illustrative examples are included in this dataset.
 
 ## First ten reviewed records
 
+The [five additional M4 records](m4-review.md#additional-reviewed-records) match the cited original documents and bring the reviewed dataset to fifteen projects. The [source adjustment approved September 16](source-scope-decision.md) completes the dataset condition with one answer source and a second document registered as context only.
+
 All amounts below are reviewed **allocations in the approved 2026/27 budget**, not reported spending. The source heading is “Estimated Budget amount (Kshs.)”; no thousands/millions multiplier applies. PDF page numbers and printed page labels agree on these four pages. The source label “New” is retained as text and is not interpreted as proof of construction or completion.
 
-The owner approved these descriptions, wards, amounts, years, and references after the source review request. Any later changes or additional records require the same source check before entering the demo seed.
+Manual review covered descriptions, wards, amounts, years, and references. Any later changes or additional records require the same source check before entering the demo seed.
 
 | Record | Source project description | Ward | KES | PDF page | Row on page |
 | --- | --- | --- | ---: | ---: | ---: |
@@ -40,7 +42,7 @@ Rows count data rows below the table header; the first row on page 278 is the co
 
 Choose a county with accessible official documents that clearly identify projects, financial years, amounts, and locations. Prefer a small area that a team member or local reviewer knows. Record why the chosen documents can support the intended questions.
 
-Target two or three documents and 15–30 reviewed projects across two or three wards. Record whether each document is a plan, draft budget, approved budget, revision, expenditure report, or implementation report. Do not assume these sources support the same claims.
+Target 15–30 reviewed projects across two or three wards from at least one official project-level document, following the [approved source adjustment](source-scope-decision.md). Register additional documents separately and state whether they supply answers or context only. Registration alone is not independent corroboration. Record whether each document is a plan, draft budget, approved budget, revision, expenditure report, or implementation report. Do not assume these sources support the same claims.
 
 ## Ingestion and review
 

@@ -12,7 +12,7 @@ from src.services.citations import ALLOCATION_NOTICE
 from src.services.locality import financial_years, has_uncovered_location, normalize, resolve_localities, sector_for
 from src.services.projects import get_coverage, search_projects
 from src.services.explainer import definition, explain_project, glossary_term
-from src.services.translator import notice, translate
+from src.services.translator import NEXT_STEPS, REVIEW_CONTEXT, notice, translate
 from src.services.verification import WORDING_REVIEWED, verify_claim, verification_message
 
 SESSION_TTL = 30 * 60
@@ -75,6 +75,8 @@ class ConversationService:
                 wording = message[state.language] if isinstance(message, dict) else translate(message, state.language)
                 return ChatResponse(session_id=key, kind=kind, message=wording, coverage=self.coverage,
                                     language=state.language,
+                                    review_context=REVIEW_CONTEXT[state.language] if kwargs.get("projects") else None,
+                                    next_steps=NEXT_STEPS[state.language] if kwargs.get("projects") and kind in {"details", "explanation", "verification"} else None,
                                     review_notice=("Rasimu ya uhakiki; mapitio yanasubiriwa." if state.language == "sw" else "Draft verification wording; review pending.") if kind == "verification" and not WORDING_REVIEWED else None,
                                     **kwargs)
 
@@ -119,7 +121,7 @@ class ConversationService:
                 state.selected_id = selected
                 return respond("explanation", {lang: explain_project(results[0], lang) for lang in ("en", "sw")}, projects=results, disclaimer=ALLOCATION_NOTICE)
             if request.action == "coverage" or text in {"help", "coverage", "sources", "s", "msaada", "vyanzo"}:
-                return respond("coverage", "The pilot covers ten reviewed allocation records in Wamagana, Mweiga, and Kabaru for FY 2026/2027. Only the programme budget supplies project answers; the second document is registered for later review.")
+                return respond("coverage", "The pilot covers fifteen reviewed allocation records in Wamagana, Mweiga, and Kabaru for FY 2026/2027. Only the programme budget supplies project answers; the second document is registered for later review.")
             if request.action == "more" or text in {"more", "next", "show more", "zaidi", "endelea"}:
                 if not state.query:
                     return respond("clarification", "Choose a ward to start a project search.", choices=self.coverage["wards"])

@@ -33,6 +33,15 @@ def test_switch_repeats_same_evidence_without_advancing_page(client):
     assert en['review_notice'] is None
 
 
+def test_coverage_reports_expanded_count_in_both_languages(client):
+    en = ask(client, 'HELP')
+    sw = ask(client, 'SW', session_id=en['session_id'])
+    assert en['coverage']['record_count'] == sw['coverage']['record_count'] == 15
+    assert 'fifteen reviewed' in en['message']
+    assert 'kumi na tano' in sw['message']
+    assert sum(s['used_for_answers'] for s in en['coverage']['sources']) == 1
+
+
 def test_explanation_uses_same_selected_record_and_survives_switch(client):
     first = ask(client, 'Wamagana')
     key, project = first['session_id'], first['projects'][0]
@@ -63,6 +72,7 @@ def test_explanation_never_inherits_unknown_scope_or_arbitrary_amounts(client):
 
 @pytest.mark.parametrize('en,sw,kind', [
     ('Show road projects in Mweiga', 'Onyesha miradi ya barabara katika Mweiga', 'results'),
+    ('Water projects in Mweiga', 'Miradi ya maji katika Mweiga', 'results'),
     ('Water projects in Kabaru', 'Miradi ya maji katika Kabaru', 'empty'),
     ('Projects in Nairobi near Wamagana', 'Miradi katika Nairobi karibu na Wamagana', 'clarification'),
     ('Wamagana 2025/26', 'Wamagana 2025/26', 'empty'),
@@ -112,8 +122,9 @@ def test_all_pilot_whatsapp_explanations_details_and_pages_fit_limit(client):
         for project in search_projects(service.db_path):
             result = service.reply(ChatRequest(message=project['ward'], language=language))
             key = UUID(result.session_id)
-            if project['id'] not in [p['id'] for p in result.projects]:
-                service.reply(ChatRequest(action='more', session_id=key))
+            while project['id'] not in [p['id'] for p in result.projects]:
+                assert result.has_more
+                result = service.reply(ChatRequest(action='more', session_id=key))
             for action in ['details','explain']:
                 result = service.reply(ChatRequest(action=action, project_id=project['id'], session_id=key))
                 assert result.projects == [project]
