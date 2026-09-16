@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Track-A-Mtaani: understand public projects in your community and inspect their sources. Working project-discovery POC.">
+    <title>Track-A-Mtaani · Know your community</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/translations.js" defer></script>
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#question">Skip to question</a>
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">m.</span>
+        <div><span class="brand-name">Track-A-Mtaani</span><span class="brand-tagline">Your community. Your right to know.</span></div>
+      </div>
+      <div class="language" role="group" aria-label="Language"><button type="button" data-language="en" aria-pressed="true">EN</button><button type="button" data-language="sw" aria-pressed="false">SW</button></div>
+    </header>
+
+    <main class="workspace">
+      <div class="preview-note"><span class="status-dot" aria-hidden="true"></span><strong>Hackathon POC</strong><span>Selected official records · Always check the source</span></div>
+
+      <details class="coverage">
+        <summary><span><span class="eyebrow">Pilot coverage</span><span class="coverage-title">Nyeri County <span aria-hidden="true">·</span> FY 2026/27</span></span><span class="coverage-action">Coverage &amp; privacy <span aria-hidden="true">+</span></span></summary>
+        <div class="coverage-body">
+          <p>The pilot covers selected records in Wamagana, Mweiga, and Kabaru. Ten project records have been reviewed against the approved 2026/27 programme budget. This is not a complete list of projects in these wards.</p>
+          <p>Messages go to this application to retrieve reviewed records. No messages are sent to an AI or WhatsApp provider in this version. Chat history stays in this page; temporary server context expires after 30 minutes of inactivity. Reloading starts a new conversation.</p>
+          <p>An allocation is not proof that money was spent or work completed. Please avoid sharing personal or sensitive information.</p>
+          <div id="coverage-sources"></div>
+        </div>
+      </details>
+
+      <section id="welcome" class="welcome" aria-labelledby="welcome-title">
+        <div class="welcome-symbol" aria-hidden="true">↗</div>
+        <p class="eyebrow">Public information, made understandable</p>
+        <h1 id="welcome-title">What's planned<br>for your community?</h1>
+        <p class="welcome-copy">Find local projects. Understand the budget.<br>See the evidence behind every answer.</p>
+        <div class="suggestions" aria-label="Example questions">
+          <button class="suggestion" type="button" data-prompt="What projects are planned in Wamagana?"><span class="suggestion-icon" aria-hidden="true">↗</span><span><strong>Find projects</strong><span>Explore Wamagana Ward</span></span><span aria-hidden="true">→</span></button>
+          <button class="suggestion" type="button" data-prompt="Explain allocation"><span class="suggestion-icon" aria-hidden="true">≡</span><span><strong>Understand a budget</strong><span>What does allocation mean?</span></span></button>
+          <button class="suggestion" type="button" data-prompt="Verify Kianjogu Karaihu in Wamagana FY 2026/2027 approved allocation KSh 3,000,000"><span class="suggestion-icon" aria-hidden="true">✓</span><span><strong>Check a claim</strong><span>Compare an allocation</span></span></button>
+        </div>
+      </section>
+
+      <section id="conversation" class="conversation" aria-label="Conversation" hidden></section>
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+      <button id="retry" class="retry" type="button" hidden>Try again</button>
+
+      <div class="composer-area">
+        <form id="chat-form" class="composer">
+          <label class="sr-only" for="question">Ask about a covered ward</label>
+          <textarea id="question" name="question" rows="1" maxlength="1000" placeholder="Ask about projects in your area…" required aria-describedby="composer-hint"></textarea>
+          <button id="send" class="send" type="submit" aria-label="Send question"><span class="send-label">Send</span><span aria-hidden="true">↑</span></button>
+        </form>
+        <p id="composer-hint" class="composer-hint">Answers cover selected documents, not every project. Enter to send; Shift+Enter for a new line.</p>
+      </div>
+      <footer class="footer"><span>Built for civic transparency.</span><span>Evidence before answers.</span></footer>
+    </main>
+    <noscript><p class="noscript">Enable JavaScript to search reviewed projects and see their source references.</p></noscript>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+fastapi==0.141.1
+uvicorn==0.53.0
+pydantic==2.13.5
+twilio==9.11.1
+python-dotenv==1.2.3
+# Local validation for this POC; no paid services are required.
+pytest==9.1.1
+httpx==0.28.1
