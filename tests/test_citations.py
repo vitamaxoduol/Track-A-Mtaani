@@ -12,7 +12,7 @@ def test_every_financial_observation_has_matching_readable_citation(client):
     for project in records:
         for observation in project["observations"]:
             cite = observation["citation"]
-            assert cite["pdf_page"] in {278, 287, 291, 292}
+            assert cite["pdf_page"] in {278, 282, 287, 291, 292, 296}
             assert cite["printed_page"] == str(cite["pdf_page"])
             assert cite["page_url"] == cite["url"] + f"#page={cite['pdf_page']}"
             assert cite["url"].startswith("https://www.nyeri.go.ke/")
@@ -22,3 +22,7 @@ def test_every_financial_observation_has_matching_readable_citation(client):
             assert "not proof" in observation["disclaimer"]
     assert records[0]["observations"][0]["citation"]["pdf_page"] == 278
     assert records[9]["observations"][0]["citation"]["pdf_page"] == 292
+    assert [(p["id"], p["observations"][0]["citation"]["pdf_page"]) for p in records[10:]] == [
+        ("nyeri-2026-011", 291), ("nyeri-2026-012", 292), ("nyeri-2026-013", 292),
+        ("nyeri-2026-014", 296), ("nyeri-2026-015", 282),
+    ]

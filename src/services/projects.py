@@ -32,7 +32,7 @@ def search_projects(path: Path, *, county: str | None = None, ward: str | None =
             values.append(value)
     if sector:
         clauses.append("p.spending_unit = ? COLLATE NOCASE")
-        values.append({"roads": "Roads Headquarters", "education": "ECDE", "energy": "Energy", "water": "Water", "health": "Health"}[sector])
+        values.append({"roads": "Roads Headquarters", "education": "ECDE", "energy": "Energy", "water": "Water Headquarters", "health": "Health"}[sector])
     where = " WHERE " + " AND ".join(clauses) if clauses else ""
     with connect(path) as db:
         rows = db.execute("""

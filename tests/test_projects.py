@@ -9,9 +9,9 @@ from src.db.seed import SEED_PATH, load_dataset, seed_database
 def test_seed_is_reviewed_matches_processed_and_is_idempotent(tmp_path):
     assert SEED_PATH.read_bytes() == (ROOT / "data/processed/projects.json").read_bytes()
     db_path = tmp_path / "seed.sqlite3"
-    assert seed_database(db_path) == seed_database(db_path) == 10
+    assert seed_database(db_path) == seed_database(db_path) == 15
     with connect(db_path) as db:
-        assert db.execute("SELECT COUNT(*) FROM observations").fetchone()[0] == 10
+        assert db.execute("SELECT COUNT(*) FROM observations").fetchone()[0] == 15
         assert db.execute("SELECT COUNT(*) FROM documents").fetchone()[0] == 2
     dataset = load_dataset()
     assert all(o.reviewer == "Project owner" for p in dataset.projects for o in p.observations)
@@ -40,19 +40,30 @@ def test_search_real_reviewed_records(client):
     response = client.get("/api/v1/projects", params={"county": "nyeri", "ward": "wamagana", "financial_year": "2026/2027", "limit": 30})
     assert response.status_code == 200
     result = response.json()
-    assert result["total"] == 6
+    assert result["total"] == 9
     records = result["projects"]
-    assert [p["observations"][0]["amount_kes"] for p in records] == ["700000.00", "700000.00", "700000.00", "1000000.00", "2000000.00", "3000000.00"]
+    assert [p["observations"][0]["amount_kes"] for p in records] == ["700000.00", "700000.00", "700000.00", "1000000.00", "2000000.00", "3000000.00", "1000000.00", "2000000.00", "2400000.00"]
     assert all(p["ward"] == "Wamagana" for p in records)
     assert all(o["amount_kind"] == "ALLOCATION" for p in records for o in p["observations"])
 
 
 def test_filters_never_fall_back_to_all_projects(client):
-    for params in [{"county": "Nairobi"}, {"ward": "Unknown"}, {"financial_year": "2025/2026"}, {"ward": "Mweiga", "sector": "water"}, {"ward": "' OR 1=1 --"}]:
+    for params in [{"county": "Nairobi"}, {"ward": "Unknown"}, {"financial_year": "2025/2026"}, {"ward": "Kabaru", "sector": "water"}, {"ward": "' OR 1=1 --"}]:
         result = client.get("/api/v1/projects", params=params).json()
         assert result["projects"] == []
         assert result["total"] == 0
-    assert client.get("/api/v1/projects", params={"sector": "roads"}).json()["total"] == 4
+    assert client.get("/api/v1/projects", params={"sector": "roads"}).json()["total"] == 8
+
+
+def test_water_filter_preserves_source_spending_unit_and_exact_evidence(client):
+    result = client.get("/api/v1/projects", params={"ward": "Mweiga", "sector": "water"}).json()
+    assert result["total"] == 1
+    project = result["projects"][0]
+    assert project["id"] == "nyeri-2026-015"
+    assert project["spending_unit"] == "Water Headquarters"
+    observation = project["observations"][0]
+    assert observation["amount_kes"] == "2000000.00"
+    assert observation["citation"]["pdf_page"] == 282
 
 
 def test_details_and_coverage(client):
@@ -62,7 +73,7 @@ def test_details_and_coverage(client):
     assert record["observations"][0]["formatted_amount"] == "KSh 2,500,000"
     assert client.get("/api/v1/projects/not-a-project").status_code == 404
     coverage = client.get("/api/v1/coverage").json()
-    assert coverage["record_count"] == 10
+    assert coverage["record_count"] == 15
     assert sum(s["used_for_answers"] for s in coverage["sources"]) == 1
     assert not coverage["features"]["whatsapp"]
 

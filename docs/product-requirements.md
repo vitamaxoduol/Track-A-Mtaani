@@ -26,7 +26,7 @@ The [implementation plan](implementation-plan.md) controls the fixed submission 
 | Hackathon target | WhatsApp connected to the same service, Kiswahili text, explanations using reviewed definitions, verification of a single project/amount claim |
 | Outside this POC | Audio responses, nationwide coverage, live expenditure tracking, citizen reports, corruption investigations, user accounts, GPS search, voice-note input, autonomous agents |
 
-The pilot targets one county, two or three wards, 15–30 reviewed project records, and two or three official documents. Ten reviewed records are sufficient for the first development milestone; the broader target applies to the final demo.
+The pilot targets one county, two or three wards, and 15–30 reviewed project records from at least one official project-level document. Additional official documents must be registered separately as answer sources or context only; registration alone is not independent corroboration. This [approved adjustment of September 16, 2026](source-scope-decision.md) replaces the original two-or-three-project-source target. Ten reviewed records are sufficient for the first development milestone; the broader record target applies to the final demo.
 
 ## User journeys
 

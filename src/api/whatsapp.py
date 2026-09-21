@@ -82,6 +82,7 @@ def format_whatsapp(result: ChatResponse, first_use: bool = False) -> str:
                 observation['formatted_amount'] + " " + t("allocated", "imetengwa") + "\n"
                 + t(f"{project['ward']} Ward | FY {observation['financial_year']}", f"Wadi ya {project['ward']} | Mwaka wa fedha {observation['financial_year']}") + "\n"
                 + t("Source", "Chanzo") + f" [{sources[key]}], PDF " + t("page", "ukurasa") + f" {citation['pdf_page']}"
+                + "\n" + t("Record reviewed: ", "Rekodi ilikaguliwa: ") + citation['reviewed_date']
             )
             if result.kind == "details":
                 paragraphs.append(t("Department: ", "Idara: ") + project['department'] + "\n" + t("Evidence: ", "Ushahidi: ") + citation['excerpt'])
@@ -94,6 +95,10 @@ def format_whatsapp(result: ChatResponse, first_use: bool = False) -> str:
         paragraphs.append(result.disclaimer)
     if result.projects:
         paragraphs.append(t("Selected records only; not a complete ward budget.", "Rekodi zilizochaguliwa pekee; si bajeti nzima ya wadi."))
+    if result.review_context:
+        paragraphs.append(result.review_context)
+    if result.next_steps:
+        paragraphs.append(result.next_steps)
     if result.kind == "results":
         paragraphs.append(t(f"Reply 1–{len(result.projects)} for details.", f"Tuma 1–{len(result.projects)} kwa maelezo.") + (t(" MORE for the next results.", " ZAIDI kwa matokeo yanayofuata.") if result.has_more else ""))
     if result.kind == "details":

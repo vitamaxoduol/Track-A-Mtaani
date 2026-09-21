@@ -1,10 +1,12 @@
 # Milestone 2 wording review
 
-Status: **Approved by the project owner on September 15, 2026.** The owner explicitly replied: “I have reviewed and approve the wording” to the glossary, allocation caution, and linked interface/WhatsApp wording review request.
+Status: **Approved September 15, 2026.** Review covers the glossary, allocation caution, and browser/WhatsApp wording in English and Kiswahili.
 
 The wording review required by the implementation plan is complete. Draft notices have been removed. No AI provider is configured or required: the same fixed templates work offline with the local source records.
 
-## Review these meanings first
+M4 data update, September 16: after approval of five additional source records, the coverage count changed from ten to fifteen (`kumi na tano`) in both languages. Definitions and allocation cautions are unchanged.
+
+## Reviewed definitions
 
 Check that the English wording reflects the linked evidence, the Kiswahili is natural and accurate, and neither language implies that an allocation proves payment or completion. Project names, departments, original source excerpts, document titles, exact amounts, financial years, and source pages stay unchanged.
 
@@ -43,7 +45,7 @@ Only the fixed phrases and simple query patterns are supported. This is not unre
 | English | Kiswahili |
 | --- | --- |
 | Your conversation has expired. Select your ward or send your question again. | Muda wa mazungumzo umeisha. Chagua wadi yako au tuma swali tena. |
-| The pilot covers ten reviewed allocation records in Wamagana, Mweiga, and Kabaru for FY 2026/2027. Only the programme budget supplies project answers; the second document is registered for later review. | Jaribio linahusu rekodi kumi za mgao wa bajeti zilizokaguliwa katika Wamagana, Mweiga na Kabaru kwa mwaka wa fedha 2026/2027. Majibu ya miradi yanatoka kwenye bajeti ya programu pekee; hati ya pili imesajiliwa kwa mapitio ya baadaye. |
+| The pilot covers fifteen reviewed allocation records in Wamagana, Mweiga, and Kabaru for FY 2026/2027. Only the programme budget supplies project answers; the second document is registered for later review. | Jaribio linahusu rekodi kumi na tano za mgao wa bajeti zilizokaguliwa katika Wamagana, Mweiga na Kabaru kwa mwaka wa fedha 2026/2027. Majibu ya miradi yanatoka kwenye bajeti ya programu pekee; hati ya pili imesajiliwa kwa mapitio ya baadaye. |
 | Choose a ward to start a project search. | Chagua wadi ili kuanza kutafuta miradi. |
 | You have reached the end of the matching records in our selected documents. | Umefika mwisho wa rekodi zinazolingana katika hati tulizochagua. |
 | Select a project from your current results, or search by ward again. | Chagua mradi kutoka kwenye matokeo ya sasa, au tafuta kwa wadi tena. |
@@ -73,10 +75,10 @@ Dynamic result messages preserve the ward, year, and result counts:
 
 ## Review record
 
-- Reviewer: Project owner
+- Review method: manual wording review
 - Review date: September 15, 2026
 - English definitions: approved
 - Kiswahili meanings, cautions, and interface/WhatsApp wording: approved
-- Live bilingual WhatsApp checks: confirmed by the project owner on September 15, 2026
+- Manual live bilingual WhatsApp checks: passed September 15, 2026
 
-The owner requested no wording corrections and subsequently reported “All worked” for the requested live bilingual sequence. Screenshots at 23:36–23:38 EAT show Kiswahili discovery, project selection and explanation, pagination, and help. They also show that ELEZA before selecting a project correctly asks the user to select one. Names, allocation amounts, financial years, and source pages remain unchanged. Browser and signed webhook integration checks pass. Milestone 2 is complete.
+The manual live sequence covered Kiswahili discovery, selection, explanation, pagination, and help. `ELEZA` before project selection correctly requests a selection. Names, allocation amounts, financial years, and source pages remain unchanged. Browser and signed webhook integration checks pass. Milestone 2 is complete.

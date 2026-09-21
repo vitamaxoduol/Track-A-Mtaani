@@ -17,7 +17,7 @@
       "local_path": "data/raw/county-budget.pdf",
       "sha256": "ff83ce352a1be8d7ff18e7aa2567128d8b5b0880759f4dd1e2fd448050be44b4",
       "page_count": 433,
-      "usage": "Reviewed project observations; Codex visually checked pages and project owner confirmed review and approval on 2026-09-14"
+      "usage": "Fifteen reviewed project observations; owner approved initial ten on 2026-09-14 and five M4 additions on 2026-09-16 after checking cited originals"
     },
     {
       "id": "nyeri-approved-estimates-2026-27",
@@ -45,8 +45,8 @@
     "financial_years": [
       "2026/2027"
     ],
-    "candidate_count": 10,
-    "published_record_count": 10,
+    "candidate_count": 15,
+    "published_record_count": 15,
     "gaps": [
       "Selected rows only; not a complete ward or county register.",
       "Budget allocations only; no evidence of actual spending or physical completion.",
@@ -461,6 +461,211 @@
           },
           "reviewer": "Project owner",
           "reviewed_date": "2026-09-14"
+        }
+      ]
+    },
+    {
+      "id": "nyeri-2026-011",
+      "name": "Kaiguri Gwa Karuga",
+      "county": "Nyeri",
+      "ward": "Wamagana",
+      "constituency": null,
+      "sub_county": null,
+      "department": "Roads, Transport, Public Works, Infrastructure and Energy",
+      "spending_unit": "Roads Headquarters",
+      "observations": [
+        {
+          "id": "nyeri-2026-011-allocation",
+          "amount_kes": "1000000.00",
+          "currency": "KES",
+          "amount_kind": "ALLOCATION",
+          "original_amount": "1,000,000",
+          "original_units": "Kshs.",
+          "source_amount_heading": "Estimated Budget amount (Kshs.)",
+          "normalization": "KES as printed; no scale multiplier; exact decimal text",
+          "financial_year": "2026/2027",
+          "source_financial_year": "2026/27",
+          "approval_stage": "APPROVED",
+          "implementation_state": null,
+          "source_status_label": "New",
+          "source_id": "nyeri-approved-pbb-2026-27",
+          "source_pdf_page": 291,
+          "source_printed_page_label": "291",
+          "source_table_row": 7,
+          "source_excerpt": "Kaiguri Gwa Karuga | 1,000,000 | CGN | 2026/27 | Wamagana | Ward Specific | New",
+          "excerpt_note": "Relevant cells transcribed in source-column order; whitespace normalized. Department punctuation/line wraps normalized.",
+          "review_status": "REVIEWED",
+          "agent_review": {
+            "reviewer": "Codex",
+            "date": "2026-09-16",
+            "method": "Text extraction followed by visual inspection of the rendered PDF page, amount, ward and year"
+          },
+          "reviewer": "Project owner",
+          "reviewed_date": "2026-09-16"
+        }
+      ]
+    },
+    {
+      "id": "nyeri-2026-012",
+      "name": "Kihuro rd",
+      "county": "Nyeri",
+      "ward": "Wamagana",
+      "constituency": null,
+      "sub_county": null,
+      "department": "Roads, Transport, Public Works, Infrastructure and Energy",
+      "spending_unit": "Roads Headquarters",
+      "observations": [
+        {
+          "id": "nyeri-2026-012-allocation",
+          "amount_kes": "2000000.00",
+          "currency": "KES",
+          "amount_kind": "ALLOCATION",
+          "original_amount": "2,000,000",
+          "original_units": "Kshs.",
+          "source_amount_heading": "Estimated Budget amount (Kshs.)",
+          "normalization": "KES as printed; no scale multiplier; exact decimal text",
+          "financial_year": "2026/2027",
+          "source_financial_year": "2026/27",
+          "approval_stage": "APPROVED",
+          "implementation_state": null,
+          "source_status_label": "New",
+          "source_id": "nyeri-approved-pbb-2026-27",
+          "source_pdf_page": 292,
+          "source_printed_page_label": "292",
+          "source_table_row": 1,
+          "source_excerpt": "Kihuro rd | 2,000,000 | CGN | 2026/27 | Wamagana | Ward Specific | New",
+          "excerpt_note": "Relevant cells transcribed in source-column order; whitespace normalized. Department punctuation/line wraps normalized.",
+          "review_status": "REVIEWED",
+          "agent_review": {
+            "reviewer": "Codex",
+            "date": "2026-09-16",
+            "method": "Text extraction followed by visual inspection of the rendered PDF page, amount, ward and year"
+          },
+          "reviewer": "Project owner",
+          "reviewed_date": "2026-09-16"
+        }
+      ]
+    },
+    {
+      "id": "nyeri-2026-013",
+      "name": "Kanyamati",
+      "county": "Nyeri",
+      "ward": "Wamagana",
+      "constituency": null,
+      "sub_county": null,
+      "department": "Roads, Transport, Public Works, Infrastructure and Energy",
+      "spending_unit": "Roads Headquarters",
+      "observations": [
+        {
+          "id": "nyeri-2026-013-allocation",
+          "amount_kes": "2400000.00",
+          "currency": "KES",
+          "amount_kind": "ALLOCATION",
+          "original_amount": "2,400,000",
+          "original_units": "Kshs.",
+          "source_amount_heading": "Estimated Budget amount (Kshs.)",
+          "normalization": "KES as printed; no scale multiplier; exact decimal text",
+          "financial_year": "2026/2027",
+          "source_financial_year": "2026/27",
+          "approval_stage": "APPROVED",
+          "implementation_state": null,
+          "source_status_label": "New",
+          "source_id": "nyeri-approved-pbb-2026-27",
+          "source_pdf_page": 292,
+          "source_printed_page_label": "292",
+          "source_table_row": 2,
+          "source_excerpt": "Kanyamati | 2,400,000 | CGN | 2026/27 | Wamagana | Ward Specific | New",
+          "excerpt_note": "Relevant cells transcribed in source-column order; whitespace normalized. Department punctuation/line wraps normalized.",
+          "review_status": "REVIEWED",
+          "agent_review": {
+            "reviewer": "Codex",
+            "date": "2026-09-16",
+            "method": "Text extraction followed by visual inspection of the rendered PDF page, amount, ward and year"
+          },
+          "reviewer": "Project owner",
+          "reviewed_date": "2026-09-16"
+        }
+      ]
+    },
+    {
+      "id": "nyeri-2026-014",
+      "name": "Jambo Zaina Box Culvert",
+      "county": "Nyeri",
+      "ward": "Kabaru",
+      "constituency": null,
+      "sub_county": null,
+      "department": "Roads, Transport, Public Works, Infrastructure and Energy",
+      "spending_unit": "Roads Headquarters",
+      "observations": [
+        {
+          "id": "nyeri-2026-014-allocation",
+          "amount_kes": "4000000.00",
+          "currency": "KES",
+          "amount_kind": "ALLOCATION",
+          "original_amount": "4,000,000",
+          "original_units": "Kshs.",
+          "source_amount_heading": "Estimated Budget amount (Kshs.)",
+          "normalization": "KES as printed; no scale multiplier; exact decimal text",
+          "financial_year": "2026/2027",
+          "source_financial_year": "2026/27",
+          "approval_stage": "APPROVED",
+          "implementation_state": null,
+          "source_status_label": "New",
+          "source_id": "nyeri-approved-pbb-2026-27",
+          "source_pdf_page": 296,
+          "source_printed_page_label": "296",
+          "source_table_row": 1,
+          "source_excerpt": "Jambo Zaina Box Culvert | 4,000,000 | CGN | 2026/27 | Kabaru | Ward Specific | New",
+          "excerpt_note": "Relevant cells transcribed in source-column order; whitespace normalized. Department punctuation/line wraps normalized.",
+          "review_status": "REVIEWED",
+          "agent_review": {
+            "reviewer": "Codex",
+            "date": "2026-09-16",
+            "method": "Text extraction followed by visual inspection of the rendered PDF page, amount, ward and year"
+          },
+          "reviewer": "Project owner",
+          "reviewed_date": "2026-09-16"
+        }
+      ]
+    },
+    {
+      "id": "nyeri-2026-015",
+      "name": "Supporting water projects",
+      "county": "Nyeri",
+      "ward": "Mweiga",
+      "constituency": null,
+      "sub_county": null,
+      "department": "Water, Environment and Climate Change",
+      "spending_unit": "Water Headquarters",
+      "observations": [
+        {
+          "id": "nyeri-2026-015-allocation",
+          "amount_kes": "2000000.00",
+          "currency": "KES",
+          "amount_kind": "ALLOCATION",
+          "original_amount": "2,000,000",
+          "original_units": "Kshs.",
+          "source_amount_heading": "Estimated Budget amount (Kshs.)",
+          "normalization": "KES as printed; no scale multiplier; exact decimal text",
+          "financial_year": "2026/2027",
+          "source_financial_year": "2026/27",
+          "approval_stage": "APPROVED",
+          "implementation_state": null,
+          "source_status_label": "New",
+          "source_id": "nyeri-approved-pbb-2026-27",
+          "source_pdf_page": 282,
+          "source_printed_page_label": "282",
+          "source_table_row": 7,
+          "source_excerpt": "Supporting water projects | 2,000,000 | CGN | 2026/27 | Mweiga | Ward Specific | New",
+          "excerpt_note": "Relevant cells transcribed in source-column order; whitespace normalized. Department punctuation/line wraps normalized.",
+          "review_status": "REVIEWED",
+          "agent_review": {
+            "reviewer": "Codex",
+            "date": "2026-09-16",
+            "method": "Text extraction followed by visual inspection of the rendered PDF page, amount, ward and year"
+          },
+          "reviewer": "Project owner",
+          "reviewed_date": "2026-09-16"
         }
       ]
     }

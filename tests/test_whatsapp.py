@@ -76,7 +76,9 @@ def test_duplicate_message_does_not_reply_or_advance_pagination(wa_client):
     assert "Showing 4–6" in reply_text(send(wa_client, first_more))
     duplicate = send(wa_client, first_more)
     assert reply_text(duplicate) == ""
-    assert "end of the matching" in reply_text(send(wa_client, fields(3, "MORE")))
+    third = reply_text(send(wa_client, fields(3, "MORE")))
+    assert "Showing 7–9" in third and "Kanyamati" in third
+    assert "end of the matching" in reply_text(send(wa_client, fields(4, "MORE")))
 
 
 def test_deduplication_survives_adapter_restart_and_retains_no_message_body(wa_client):

@@ -6,9 +6,9 @@ This screen is part of the fixed [implementation plan](implementation-plan.md). 
 
 Build one responsive web chat in `frontend/`, inside this repository. Serve it from the FastAPI backend. Use plain HTML, CSS, and JavaScript for the initial screen. This keeps the demo to one app, one API, and one deployment.
 
-The browser is the quickest entry point for judges to try the product. WhatsApp remains the planned community channel, using the same conversation service. Neither channel has its own budget or verification logic.
+The browser is the quickest entry point for judges to try the product. WhatsApp is the implemented community channel, using the same conversation service. Neither channel has its own budget or verification logic.
 
-The discovery screen is implemented in `frontend/` and served by FastAPI. Project search, citations, inline evidence, pagination, coverage, and error retry are working. The language switch, explanations, and claim verification remain unavailable until their planned milestones. The wireframe below remains the design reference.
+The discovery screen is implemented in `frontend/` and served by FastAPI. Project search, citations, inline evidence, pagination, coverage, and error retry are working. English/Kiswahili switching, reviewed explanations, and bounded claim verification are also implemented. Action buttons on older replies are disabled after a new reply arrives; use the latest project cards. The wireframe below remains the design reference.
 
 ## One screen
 

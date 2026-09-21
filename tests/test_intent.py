@@ -13,10 +13,14 @@ def test_discovery_pagination_and_numbered_details(client):
     assert "2026/2027" in first["message"]
     key = first["session_id"]
     second = ask(client, action="more", session_id=key)
-    assert len(second["projects"]) == 3 and not second["has_more"]
+    assert len(second["projects"]) == 3 and second["has_more"]
     assert set(p["id"] for p in first["projects"]).isdisjoint(p["id"] for p in second["projects"])
     details = ask(client, "1", session_id=key)
     assert details["projects"][0]["id"] == second["projects"][0]["id"]
+    third = ask(client, action="more", session_id=key)
+    assert [p["id"] for p in third["projects"]] == ["nyeri-2026-011", "nyeri-2026-012", "nyeri-2026-013"]
+    assert not third["has_more"]
+    assert ask(client, "3", session_id=key)["projects"][0]["id"] == "nyeri-2026-013"
     assert ask(client, action="more", session_id=key)["kind"] == "empty"
 
 
@@ -45,6 +49,8 @@ def test_exact_project_name_and_sector_queries(client):
     result = ask(client, "Show road projects in Mweiga")
     assert [p["name"] for p in result["projects"]] == ["Grading and Murraming"]
     result = ask(client, "What water projects are in Mweiga?")
+    assert [p["id"] for p in result["projects"]] == ["nyeri-2026-015"]
+    result = ask(client, "What water projects are in Kabaru?")
     assert result["kind"] == "empty" and "does not mean no projects exist" in result["message"]
 
 

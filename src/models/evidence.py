@@ -41,5 +41,7 @@ class ChatResponse(BaseModel):
     language: Literal["en", "sw"] = "en"
     explanation_sources: list[dict] = Field(default_factory=list)
     review_notice: str | None = None
+    review_context: str | None = None
+    next_steps: str | None = None
 
     verification: dict | None = None
