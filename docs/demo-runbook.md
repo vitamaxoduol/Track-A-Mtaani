@@ -1,6 +1,6 @@
 # Demo and judge-access runbook
 
-Demo scope: fifteen reviewed records, browser and WhatsApp discovery, English/Kiswahili explanations, official citations, and bounded claim verification. See [M4 status](m4-review.md) for validation and remaining delivery tasks.
+Demo scope: fifteen reviewed records, browser and WhatsApp discovery, English/Kiswahili explanations, official citations, and bounded claim verification. Submission completed September 21, 2026. See [M4 status](m4-review.md) for delivery evidence and subsequent validation.
 
 The [59-second silent browser rehearsal](../output/video/track-a-mtaani-browser-rehearsal.webm) covers the browser flow. The final demo also includes narration, WhatsApp, and source inspection.
 
@@ -70,6 +70,8 @@ Record the test date, device, dataset/commit, and pass/fail result in [M4 review
 
 ## Rehearsal acceptance
 
+For the review-date and follow-up additions, check `Wamagana` → `1` → `SW` → `ELEZA` in WhatsApp and the corresponding browser flow. The record review date should remain `2026-09-14`; the guidance should switch languages without changing evidence. Check `Mweiga` → `3` for the later `2026-09-16` review date. A full verification claim should retain its verdict and show the same guidance when project evidence is available. Manual live checks and wording review for these additions passed September 21, 2026, supplementing the September 20 results. Repeat this sequence after relevant changes.
+
 - Discovery, selection, and pagination work in a desktop browser and at 390px/320px widths.
 - English/Kiswahili replies retain amounts, years, and links. No draft-review notice appears for approved wording.
 - Unknown places, absent records, unsupported spending, and wrong-year claims disclose limits.
@@ -82,8 +84,8 @@ Record the test date, dataset/commit, device, and failures. Track manual live re
 
 ## Judge access and submission
 
-Keep the repository private unless the organizer explicitly requires another access arrangement. Ask for the judging team's GitHub accounts or approved access method, then grant access and test it with an authorized account. A private repository URL alone does not prove the judges can open it.
+The [GitHub repository](https://github.com/vitamaxoduol/Track-A-Mtaani) is public. Unauthenticated repository access was verified September 22, 2026; judges do not need collaborator invitations. Repository access is separate from access to the running POC.
 
 Document and test the demo access arrangement before delivery. A local app with a temporary tunnel requires the laptop, backend, and tunnel to remain running.
 
-Check file formats, sizes, playback, and judge access before submission. The announced deadline is September 21, 2026; confirm the exact cutoff/timezone. Retain the submission confirmation.
+Check file formats, sizes, playback, and judge access before submission. The announced deadline was September 21, 2026; deadline requirements are confirmed in the completed submission checklist. Retain the submission confirmation.

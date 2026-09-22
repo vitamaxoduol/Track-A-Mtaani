@@ -6,6 +6,18 @@ The wording review required by the implementation plan is complete. Draft notice
 
 M4 data update, September 16: after approval of five additional source records, the coverage count changed from ten to fifteen (`kumi na tano`) in both languages. Definitions and allocation cautions are unchanged.
 
+## Review-date and follow-up wording
+
+Status: **Approved September 21, 2026.** Manual wording review and live WhatsApp checks passed for these additions. Automated checks cover language switching and preservation of evidence. The September 15 approval applies to the earlier wording.
+
+| English | Kiswahili |
+| --- | --- |
+| Record reviewed: {date} | Rekodi ilikaguliwa: {date} |
+| Review dates describe checks of budget records, not current project progress. | Tarehe za ukaguzi zinahusu rekodi za bajeti, si maendeleo ya sasa ya mradi. |
+| Next step: When asking for a project update, cite the project name, ward, financial year, allocation and source page shown. Ask for spending or completion evidence; this budget record alone cannot establish either. | Hatua inayofuata: Unapoulizia maendeleo ya mradi, taja jina la mradi, wadi, mwaka wa fedha, mgao na ukurasa wa chanzo ulioonyeshwa. Omba ushahidi wa matumizi ya fedha au kukamilika kwa kazi; rekodi hii ya bajeti pekee haithibitishi hayo. |
+
+Dates come from individual observations: September 14 for the initial ten records and September 16 for the five additions. They are neither the document's publication date nor an assessment of current implementation. Follow-up guidance appears only with a project's details, explanation, or verification evidence; it does not claim to send a request or identify a verified contact.
+
 ## Reviewed definitions
 
 Check that the English wording reflects the linked evidence, the Kiswahili is natural and accurate, and neither language implies that an allocation proves payment or completion. Project names, departments, original source excerpts, document titles, exact amounts, financial years, and source pages stay unchanged.

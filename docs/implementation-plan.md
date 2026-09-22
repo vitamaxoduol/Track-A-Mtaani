@@ -6,17 +6,19 @@ Fixed scope for the Track-A-Mtaani hackathon POC. Milestones 0–3, including Wh
 
 Budget approximately **35–45 focused hours** for an individual working with AI development tools, including implementation, source review, testing, and submission materials. This is a planning estimate, not a completion guarantee. It assumes usable official PDFs, timely messaging-account access, familiarity with the chosen stack, and access to Kiswahili review. Source extraction and provider setup are the largest schedule uncertainties.
 
-There are seven calendar days from September 14 to the September 21 deadline. Aim to finish and submit on **September 20**, using September 21 only as contingency. The exact deadline cutoff/timezone remains to be confirmed.
+There are seven calendar days from September 14 to the September 21 deadline. Aim to finish and submit on **September 20**, using September 21 only as contingency. Deadline requirements are confirmed in the completed submission checklist; the schedule below records the original planning targets.
 
-| Target date (2026) | Planned work |
-| --- | --- |
-| September 14 | Milestone 0: choose the pilot/year, collect sources, review the first ten records; check messaging-account access and submission-form requirements |
-| September 15–16 | Milestone 1: implement the web chat, structured lookup, source cards, and required tests |
-| September 17 | Milestone 1b: connect and test WhatsApp against the same evidence service |
-| September 18 | Milestones 2–3: English/Kiswahili explanations and bounded claim verification |
-| September 19 | Milestone 4: complete the reviewed dataset, run the full demo, fix failures, and check judge access |
-| September 20 | Finish the video, pitch deck, written summary, and GitHub repository; submit |
-| September 21 | Official submission deadline; contingency only |
+
+| Target date (2026) | Planned work                                                                                                                                       |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| September 14       | Milestone 0: choose the pilot/year, collect sources, review the first ten records; check messaging-account access and submission-form requirements |
+| September 15–16    | Milestone 1: implement the web chat, structured lookup, source cards, and required tests                                                           |
+| September 17       | Milestone 1b: connect and test WhatsApp against the same evidence service                                                                          |
+| September 18       | Milestones 2–3: English/Kiswahili explanations and bounded claim verification                                                                      |
+| September 19       | Milestone 4: complete the reviewed dataset, run the full demo, fix failures, and check judge access                                                |
+| September 20       | Finish the video, pitch deck, written summary, and GitHub repository; submit                                                                       |
+| September 21       | Official submission deadline; contingency only                                                                                                     |
+
 
 Allow roughly 5–7 focused hours per day through September 20. Prepare submission notes during the build and reserve 6–8 hours of the total estimate for the video, deck, summary, and final packaging. The three-minute demo below is a working format, not a stated organizer duration requirement.
 
@@ -48,16 +50,20 @@ The announcement lists grading on September 22–24, winners on September 25, an
 - Use the repository layout in [architecture.md](architecture.md). Create implementation files only when their milestone needs them; a filename in the layout is not a requirement to implement a deferred feature.
 - Submission readiness requires completed delivery checks and verified judge access.
 
+
+
 ## Milestones
 
-| Milestone | Work | Exit condition |
-| --- | --- | --- |
-| 0. Establish evidence | Select county/wards/year, register official documents, normalize and review ten project records | Each record can be traced to an exact source page; coverage gaps are documented |
-| 1. Deliver the first slice | Single-screen web chat, FastAPI chat endpoint, SQLite import, locality resolution, project search/details, deterministic responses, citations | A browser locality question returns reviewed project cards with correct amount types, years, source links, and allocation wording |
-| 1b. Connect WhatsApp | Add the messaging adapter to the same conversation service | A validated WhatsApp message returns the same evidence as the browser; duplicate deliveries are handled |
-| 2. Explain and translate | Reviewed glossary, English explanations, Kiswahili templates and optional AI adapter, timeout fallback | Both languages preserve facts and citations; reviewed explanations work even when AI is unavailable |
-| 3. Verify bounded claims | Resolve claim scope, compare observations, implement verdicts and uncertainty wording | Matching, conflicting, ambiguous, wrong-year, and missing-evidence cases produce justified results |
-| 4. Prepare the demo | Maintain 15–30 reviewed records from at least one official project-level document; identify additional documents as answer sources or context only; polish conversations, review privacy behavior, rehearse | The full demo works with authentic sources and its limits are visible |
+
+| Milestone                  | Work                                                                                                                                                                                                        | Exit condition                                                                                                                    |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 0. Establish evidence      | Select county/wards/year, register official documents, normalize and review ten project records                                                                                                             | Each record can be traced to an exact source page; coverage gaps are documented                                                   |
+| 1. Deliver the first slice | Single-screen web chat, FastAPI chat endpoint, SQLite import, locality resolution, project search/details, deterministic responses, citations                                                               | A browser locality question returns reviewed project cards with correct amount types, years, source links, and allocation wording |
+| 1b. Connect WhatsApp       | Add the messaging adapter to the same conversation service                                                                                                                                                  | A validated WhatsApp message returns the same evidence as the browser; duplicate deliveries are handled                           |
+| 2. Explain and translate   | Reviewed glossary, English explanations, Kiswahili templates and optional AI adapter, timeout fallback                                                                                                      | Both languages preserve facts and citations; reviewed explanations work even when AI is unavailable                               |
+| 3. Verify bounded claims   | Resolve claim scope, compare observations, implement verdicts and uncertainty wording                                                                                                                       | Matching, conflicting, ambiguous, wrong-year, and missing-evidence cases produce justified results                                |
+| 4. Prepare the demo | Complete — September 21, 2026 | Fifteen reviewed records and the required deliverables are complete; the submission checklist confirms access, playback, eligibility, registration, formats, and retained submission confirmation. Subsequent validation is recorded separately below. See [m4-review.md](m4-review.md). |
+
 
 The [source adjustment approved September 16, 2026](source-scope-decision.md) replaces the original two-or-three-project-source target. Registered context documents do not count as independent corroboration. The fifteen reviewed records meet the adjusted dataset condition; the remaining M4 delivery checks still apply.
 
@@ -69,26 +75,33 @@ Start frontend work from the [single-screen design](frontend-design.md). Use lab
 
 Update a row only after its exit condition is met, with the relevant check results or demo evidence.
 
-| Milestone | Status | Completion evidence |
-| --- | --- | --- |
-| 0. Establish evidence | Complete | Ten source records approved after manual review on September 14; two official source snapshots and checksums in `data/processed/projects.json` |
-| 1. Deliver the first slice | Complete | Browser/API flow works against reviewed SQLite data; automated trust checks and desktop/390px/320px Chromium checks pass |
-| 1b. Connect WhatsApp | Complete | Manual live checks passed for `Wamagana`, `1`, `MORE`, and `HELP` replies on September 15; records, amounts, source pages, and allocation caveats match the reviewed data. Local tests cover signatures, sender IDs, session isolation, and persistent duplicate handling |
-| 2. Explain and translate | Complete | Definitions and Kiswahili wording approved; manual live bilingual WhatsApp checks passed on September 15; 69 automated tests and desktop/390px/320px browser checks pass. Fixed templates preserve facts and citations without an AI service |
-| 3. Verify bounded claims | Complete | All four verdicts and comparison boundaries pass automated tests; browser checks pass at 1280px/390px/320px. Wording approved and manual live verdict checks passed on September 16, including the corrected direct-Hakiki Kiswahili replies |
-| 4. Prepare the demo | In progress | Branch `m4/demo-submission` starts at `49e01c5`; 124 expanded-dataset tests and desktop/mobile browser checks pass. Fifteen records are reviewed and imported. The approved source adjustment on September 16 completes the dataset condition; expanded manual live WhatsApp checks passed on September 20. The demo was recorded September 20, converted to MP4, and uploaded September 21. Playback verification, judge access, and final submission checks remain open. See [m4-review.md](m4-review.md) |
+
+| Milestone                  | Status      | Completion evidence                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| -------------------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0. Establish evidence      | Complete    | Ten source records approved after manual review on September 14; two official source snapshots and checksums in `data/processed/projects.json`                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| 1. Deliver the first slice | Complete    | Browser/API flow works against reviewed SQLite data; automated trust checks and desktop/390px/320px Chromium checks pass                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| 1b. Connect WhatsApp       | Complete    | Manual live checks passed for `Wamagana`, `1`, `MORE`, and `HELP` replies on September 15; records, amounts, source pages, and allocation caveats match the reviewed data. Local tests cover signatures, sender IDs, session isolation, and persistent duplicate handling                                                                                                                                                                                                                                                                                                                |
+| 2. Explain and translate   | Complete    | Definitions and Kiswahili wording approved; manual live bilingual WhatsApp checks passed on September 15; 69 automated tests and desktop/390px/320px browser checks pass. Fixed templates preserve facts and citations without an AI service                                                                                                                                                                                                                                                                                                                                             |
+| 3. Verify bounded claims   | Complete    | All four verdicts and comparison boundaries pass automated tests; browser checks pass at 1280px/390px/320px. Wording approved and manual live verdict checks passed on September 16, including the corrected direct-Hakiki Kiswahili replies                                                                                                                                                                                                                                                                                                                                             |
+| 4. Prepare the demo | Complete — September 21, 2026 | Fifteen reviewed records and the required deliverables are complete; the submission checklist confirms access, playback, eligibility, registration, formats, and retained submission confirmation. Subsequent validation is recorded separately below. See [m4-review.md](m4-review.md). |
+
+
+
 
 ## Validation record
 
-| Date | Validation | Result |
-| --- | --- | --- |
-| September 15 | First-slice automated checks | 53 tests passed, including sender-ID handling; two upstream deprecation warnings |
-| September 15 | Manual live WhatsApp discovery | Ward lookup, detail selection, pagination, coverage, and privacy replies passed with correct amounts and citations |
-| September 15 | Bilingual validation | 69 automated tests passed; browser checks passed at 1280px, 390px, and 320px; manual live selection, explanation, pagination, and help passed in Kiswahili |
-| September 16 | Bounded verification | 113 cases validated across full-suite and targeted runs; all 67 final verification/WhatsApp checks passed; browser verdicts, language switching, citations, and layout passed |
-| September 16 | Direct-Hakiki language correction | All 85 targeted verification, WhatsApp, and language tests passed; manual live supported and contradicted replies returned Kiswahili with unchanged source evidence |
-| September 16 | Expanded fifteen-record dataset | 124 automated tests and desktop/mobile browser checks passed; see [M4 review](m4-review.md) |
-| September 20 | Expanded manual live WhatsApp checks | Passed the [demo checklist](demo-runbook.md#expanded-live-whatsapp-check) |
+
+| Date         | Validation                                    | Result                                                                                                                                                                        |
+| ------------ | --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| September 15 | First-slice automated checks                  | 53 tests passed, including sender-ID handling; two upstream deprecation warnings                                                                                              |
+| September 15 | Manual live WhatsApp discovery                | Ward lookup, detail selection, pagination, coverage, and privacy replies passed with correct amounts and citations                                                            |
+| September 15 | Bilingual validation                          | 69 automated tests passed; browser checks passed at 1280px, 390px, and 320px; manual live selection, explanation, pagination, and help passed in Kiswahili                    |
+| September 16 | Bounded verification                          | 113 cases validated across full-suite and targeted runs; all 67 final verification/WhatsApp checks passed; browser verdicts, language switching, citations, and layout passed |
+| September 16 | Direct-Hakiki language correction             | All 85 targeted verification, WhatsApp, and language tests passed; manual live supported and contradicted replies returned Kiswahili with unchanged source evidence           |
+| September 16 | Expanded fifteen-record dataset               | 124 automated tests and desktop/mobile browser checks passed; see [M4 review](m4-review.md)                                                                                   |
+| September 20 | Expanded manual live WhatsApp checks          | Passed the [demo checklist](demo-runbook.md#expanded-live-whatsapp-check)                                                                                                     |
+| September 21 | Review dates and bilingual follow-up guidance | 134 automated tests and 1280px/390px/320px browser checks passed; manual wording review approved and live WhatsApp checks passed. See [M4 review](m4-review.md)               |
+
 
 Automated webhook checks use synthetic credentials and make no provider calls. Duplicate-delivery and conflicting-source cases are tested locally; synthetic observations are never imported into the demo dataset. Wording and live acceptance details are in [language review](language-review.md) and [verification review](verification-review.md).
 
@@ -108,18 +121,22 @@ Milestone 1b additionally requires validated webhook requests, numbered detail s
 
 ## Decisions and remaining checks
 
-| Decision | Working proposal | Resolution point |
-| --- | --- | --- |
-| Pilot county and wards | Nyeri: Wamagana, Mweiga, Kabaru | Selected; initial ten records approved |
-| Financial year | 2026/2027 approved budget | Selected and displayed in answers |
-| Submission format and deadline | Individual submission; September 21, 2026; five deliverables listed above | Formats and size limits in [the runbook](demo-runbook.md#submission-requirements); exact cutoff/timezone still unconfirmed |
-| Daily availability | Plan assumes roughly 5–7 focused hours per day through September 20 | Original scheduling assumption |
-| Backend and database | Python/FastAPI and SQLite | Implemented |
-| Frontend | Plain HTML/CSS/JavaScript in `frontend/`, served by FastAPI; one responsive chat screen | Working POC design |
-| Messaging provider | Custom TwiML discovery, detail, pagination, and help replies confirmed on the configured Twilio Sandbox account | Resolved for the POC; milestone 1b complete |
-| AI provider/model | Reviewed deterministic templates; no AI provider required for milestone 2 | Optional AI adapter not enabled |
-| Kiswahili reviewer | Manual review of glossary, cautions, and interface/WhatsApp wording completed September 15 | Recorded in language-review.md |
-| Hosting and cost limit | Undecided | Before deployment |
+
+| Decision                       | Working proposal                                                                                                | Resolution point                                                                                                           |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Pilot county and wards         | Nyeri: Wamagana, Mweiga, Kabaru                                                                                 | Selected; initial ten records approved                                                                                     |
+| Financial year                 | 2026/2027 approved budget                                                                                       | Selected and displayed in answers                                                                                          |
+| Submission format and deadline | Individual submission; September 21, 2026; five deliverables listed above                                       | Formats and size limits in [the runbook](demo-runbook.md#submission-requirements); deadline requirements confirmed in the submission checklist |
+| Daily availability             | Plan assumes roughly 5–7 focused hours per day through September 20                                             | Original scheduling assumption                                                                                             |
+| Backend and database           | Python/FastAPI and SQLite                                                                                       | Implemented                                                                                                                |
+| Frontend                       | Plain HTML/CSS/JavaScript in `frontend/`, served by FastAPI; one responsive chat screen                         | Working POC design                                                                                                         |
+| Messaging provider             | Custom TwiML discovery, detail, pagination, and help replies confirmed on the configured Twilio Sandbox account | Resolved for the POC; milestone 1b complete                                                                                |
+| AI provider/model              | Reviewed deterministic templates; no AI provider required for milestone 2                                       | Optional AI adapter not enabled                                                                                            |
+| Kiswahili reviewer             | Manual review of glossary, cautions, and interface/WhatsApp wording completed September 15                      | Recorded in language-review.md                                                                                             |
+| Hosting and cost limit         | Undecided                                                                                                       | Before deployment                                                                                                          |
+
+
+
 
 ## Three-minute demo
 
@@ -138,15 +155,15 @@ Completion evidence consists of the source inventory, reviewed dataset, test res
 
 ## Submission checklist
 
-- [ ] All milestone exit conditions are met and the progress tracker includes evidence.
-- [ ] README setup commands and environment variable names match the implemented app; no credentials are committed.
-- [ ] Official source documents and reviewed records support every financial claim shown in the demo.
-- [ ] Web and WhatsApp flows, citations, Kiswahili, and claim verification have been demonstrated and the required tests pass.
-- [ ] Known gaps are recorded in [limitations.md](limitations.md), and actual data handling is recorded in [privacy.md](privacy.md).
-- [x] Private repository with no open-source license; no `LICENSE` file included.
-- [ ] The working POC and GitHub repository are accessible to judges, and setup has been checked from the documented instructions.
-- [ ] A short demo video, pitch deck, and written summary are complete and consistent with the implemented behavior.
-- [ ] Eligibility, registration, exact deadline cutoff/timezone, and required formats are confirmed.
-- [ ] All required deliverables are submitted and confirmation is retained.
+- [x] All milestone exit conditions are met and the progress tracker includes evidence.
+- [x] README setup commands and environment variable names match the implemented app; no credentials are committed.
+- [x] Official source documents and reviewed records support the app’s financial figures and documented demo examples.
+- [x] Web and WhatsApp flows, citations, Kiswahili, and claim verification have been demonstrated and the required tests pass.
+- [x] Known gaps are recorded in [limitations.md](limitations.md), and actual data handling is recorded in [privacy.md](privacy.md).
+- [x] Public repository with unauthenticated access verified September 22, 2026; no open-source license selected and no `LICENSE` file included.
+- [x] The working POC and GitHub repository are accessible to judges, and setup has been checked from the documented instructions.
+- [x] Final video/audio playback and the uploaded video, pitch deck, and summary have been checked for consistency with the implemented behavior, including the source support for financial claims shown.
+- [x] Eligibility, registration, exact deadline cutoff/timezone, and required formats are confirmed.
+- [x] All required deliverables are submitted and confirmation is retained.
 
-Feature work is limited to this scope. Submission remains pending until the checklist is complete and confirmation is recorded.
+Submission completed September 21, 2026. The required deliverables were submitted and confirmation is retained. Subsequent verification and documentation updates retain their actual dates; they do not change the recorded submission date.

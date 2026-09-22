@@ -1,5 +1,5 @@
 "use strict";
-// Wording approved by the owner on 2026-09-15; project names, evidence and source titles stay verbatim.
+// Wording review status: docs/language-review.md. Evidence and source titles stay verbatim.
 const SW_UI = {
   "Skip to question": "Nenda kwenye swali",
   "Your community. Your right to know.": "Jamii yako. Haki yako ya kujua.",

@@ -113,9 +113,11 @@ Conversation routing lives in `services/intent.py`, reviewed record lookup in `s
 
 `data/seeds/demo_projects.json` contains the same reviewed facts as `data/processed/projects.json`. Synthetic conflict fixtures remain in tests. Retain the source PDFs: startup validates their hashes, and they support offline source inspection. The M4 candidate file records the approved five-record review batch.
 
-The repository is private with no open-source license; no `LICENSE` file is included. Local `.env`, SQLite databases, caches, and `tmp/` are excluded from Git. `requirements.txt` and `.env.example` describe the implemented dependencies and configuration.
+The repository is public with no open-source license; no `LICENSE` file is included. Local `.env`, SQLite databases, caches, and `tmp/` are excluded from Git. `requirements.txt` and `.env.example` describe the implemented dependencies and configuration.
 
 ## Implemented WhatsApp boundary
+
+Citation metadata includes each observation's stored `reviewed_date`. The shared conversation service supplies localized `review_context` for replies containing records and `next_steps` for project details, explanations, and verification with evidence. Both renderers display this guidance without interpreting it as current progress or a reporting service. Replies without project evidence display neither message. WhatsApp output remains bounded to 1,600 characters.
 
 `src/api/whatsapp.py` validates all received form fields using Twilio's SDK and the exact configured public URL. It calls the existing conversation service and formats the same evidence as concise TwiML text. Sources shared by several results are listed once with per-project source/page references. There are no outbound REST calls.
 

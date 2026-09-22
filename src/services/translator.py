@@ -1,6 +1,6 @@
 """Fixed interface translations; never translate or rewrite evidence fields.
 
-Wording approved by the project owner on 2026-09-15; see docs/language-review.md.
+Core wording reviewed on 2026-09-15; additions tracked in docs/language-review.md.
 """
 import re
 

@@ -64,6 +64,8 @@ def test_numbered_detail_and_pagination_keep_same_session(wa_client):
     detail = reply_text(send(wa_client, fields(2, "1")))
     assert "Hubuini ECDE" in detail and "Evidence:" in detail
     assert "700,000" in detail and len(detail) <= 1600
+    assert "Record reviewed: 2026-09-14" in detail
+    assert "Next step:" in detail and "not current project progress" in detail
     more = reply_text(send(wa_client, fields(3, "MORE")))
     assert "Kianjogu Karaihu" in more and "Showing 4–6" in more
     second = reply_text(send(wa_client, fields(4, "3")))
@@ -173,6 +175,8 @@ def test_signed_language_switch_and_explanation_preserve_session(wa_client):
     assert 'KSh 700,000' in sw and 'imetengwa' in sw and 'Rekodi 1–3' in sw
     details = reply_text(send(wa_client, fields(103, '1', sender=sender)))
     assert 'Ushahidi:' in details
+    assert 'Rekodi ilikaguliwa: 2026-09-14' in details
+    assert 'Hatua inayofuata:' in details and 'si maendeleo ya sasa' in details
     explanation = reply_text(send(wa_client, fields(104, 'ELEZA', sender=sender)))
     assert 'si uthibitisho' in explanation and 'KSh 700,000' in explanation
     assert 'Rekodi 4–6' in reply_text(send(wa_client, fields(105, 'ZAIDI', sender=sender)))

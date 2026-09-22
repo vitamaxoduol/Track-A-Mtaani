@@ -4,7 +4,7 @@ Track-A-Mtaani is an individual hackathon POC for Transparency & Accountability.
 
 ## Access
 
-The repository is private. Judge access must be arranged and tested using the organizer's accepted method.
+The [repository](https://github.com/vitamaxoduol/Track-A-Mtaani) is public and can be accessed without an invitation. Follow the setup below to run the browser POC locally; a live hosted demonstration still requires a separate access arrangement.
 
 Browser reproduction needs Python 3.12+ and the dependencies in `requirements.txt`. Follow [README setup](../README.md#run-locally) from the repository root. No `.env`, Twilio credentials, AI key, or paid AI service is needed for the browser demonstration. Startup imports the reviewed seed and checks the retained source snapshots. Internet is needed to install dependencies and open live official links; record lookup itself uses local data.
 

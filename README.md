@@ -6,6 +6,8 @@ Track-A-Mtaani is a civic information POC for the Andela hackathon's Transparenc
 
 > An allocation is not proof of spending or completion. Project facts come from reviewed records, never generated figures.
 
+Browser and WhatsApp records show their manual review dates. These dates describe checks of budget records, not current project progress. Project details, explanations, and verification replies with evidence include English/Kiswahili guidance for asking for an update: cite the project, ward, financial year, allocation, and source page, and request separate spending or completion evidence. The app does not submit requests to officials.
+
 ## Current status
 
 - **Milestone 0 complete:** ten records in Wamagana, Mweiga, and Kabaru, Nyeri County, FY 2026/2027. Source review completed on September 14, 2026.
@@ -13,9 +15,9 @@ Track-A-Mtaani is a civic information POC for the Andela hackathon's Transparenc
 - **Milestone 1b complete:** manual live checks passed for discovery, project details, pagination, coverage, and privacy on September 15, 2026. Local tests cover signature validation, sender formats, and duplicate handling. WhatsApp is disabled by default and enabled in the private demo configuration.
 - **Milestone 2 complete:** reviewed English/Kiswahili glossary and project explanations, session language switching, and shared web/WhatsApp rendering. Wording review and manual live bilingual checks completed on September 15, 2026.
 - **Milestone 3 complete:** bounded project/amount verification with four evidence-scoped verdicts. Wording review and manual live checks completed on September 16, including direct `Hakiki` replies in Kiswahili for supported and contradicted claims.
-- **Milestone 4 in progress:** five additional records were reviewed and imported on September 16; demo and submission preparation is tracked in [M4 review](docs/m4-review.md). The active seed contains fifteen reviewed records. Expanded manual live WhatsApp checks passed on September 20, 2026. The demo was converted to MP4 and uploaded September 21, 2026. Playback verification and submission handoff remain open.
+- **Milestone 4 complete — September 21, 2026:** fifteen reviewed records, tested browser/WhatsApp flows, demo video, pitch deck, and written summary. Submission checks are complete and confirmation is retained. Subsequent September 21 validation and documentation updates are recorded separately in [M4 review](docs/m4-review.md).
 
-One repository, one FastAPI application, one SQLite database, and plain HTML/CSS/JavaScript. Browser discovery needs no paid service or API key. The [GitHub repository](https://github.com/vitamaxoduol/Track-A-Mtaani) is private; the initial POC commit is `49e01c5`. M4 work is on `m4/demo-submission`.
+One repository, one FastAPI application, one SQLite database, and plain HTML/CSS/JavaScript. Browser discovery needs no paid service or API key. The [GitHub repository](https://github.com/vitamaxoduol/Track-A-Mtaani) is public; the initial POC commit is `49e01c5`. M4 was merged into `main` in `a3f4056`.
 
 ## Run locally
 
@@ -148,9 +150,9 @@ If the local health check works but the public one fails, check ngrok and its cu
 
 Two official Nyeri PDFs are retained in `data/raw/`. All fifteen current project observations come from the programme budget; the second document is registered but has not supplied project answers. [Source inventory and review table](docs/data-sources.md) record this distinction. Processed and seed JSON files contain the reviewed facts and provenance. The importer checks the snapshot hashes and rejects unreviewed, uncited, or inconsistent records.
 
-The [implementation plan](docs/implementation-plan.md) is the fixed submission scope. No additional features or app audio are planned. The [source adjustment approved September 16](docs/source-scope-decision.md) requires 15–30 reviewed records from at least one official project-level document, with additional documents explicitly identified as answer sources or context only. The fifteen reviewed records meet that dataset condition; they remain selected coverage, not a complete ward budget or independently corroborated evidence. M4 delivery checks remain open. Submission includes the working POC, GitHub repository, demo video, pitch deck, and written summary.
+The [implementation plan](docs/implementation-plan.md) is the fixed submission scope. No additional features or app audio are planned. The [source adjustment approved September 16](docs/source-scope-decision.md) requires 15–30 reviewed records from at least one official project-level document, with additional documents explicitly identified as answer sources or context only. The fifteen reviewed records meet that dataset condition; they remain selected coverage, not a complete ward budget or independently corroborated evidence. M4 submission checks were completed September 21, 2026. Submission includes the working POC, GitHub repository, demo video, pitch deck, and written summary.
 
-The repository is private and has no open-source license selected. Judge access must be arranged before submission.
+The repository is public and has no open-source license selected. Judges can access the source without an invitation. The completed [submission checklist](docs/implementation-plan.md#submission-checklist) records the POC access check. A local demonstration still depends on a running backend and tunnel.
 
 ## Documentation
 

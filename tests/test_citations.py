@@ -1,4 +1,5 @@
 from src.services.citations import format_kes
+from src.db.seed import load_dataset
 
 
 def test_exact_money_formatting_including_cents_and_zero():
@@ -26,3 +27,19 @@ def test_every_financial_observation_has_matching_readable_citation(client):
         ("nyeri-2026-011", 291), ("nyeri-2026-012", 292), ("nyeri-2026-013", 292),
         ("nyeri-2026-014", 296), ("nyeri-2026-015", 282),
     ]
+
+
+def test_citation_dates_preserve_each_records_manual_review_date(client):
+    expected = {
+        observation.id: observation.reviewed_date.isoformat()
+        for project in load_dataset().projects for observation in project.observations
+    }
+    records = client.get("/api/v1/projects", params={"limit": 30}).json()["projects"]
+    dates = set()
+    for project in records:
+        for observation in project["observations"]:
+            date = observation["citation"]["reviewed_date"]
+            assert date == expected[observation["id"]]
+            dates.add(date)
+    # Later additions must not inherit the initial review or PDF retrieval date.
+    assert dates == {"2026-09-14", "2026-09-16"}

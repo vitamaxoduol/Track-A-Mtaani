@@ -29,4 +29,4 @@ The implementation plan, product requirements, source guidance, README, and hand
 
 ## Completion boundary
 
-The fifteen reviewed records satisfy the adjusted dataset condition. Expanded manual live WhatsApp checks passed on September 20, 2026. The demo was converted to MP4 and uploaded September 21. M4 remains in progress: playback verification, judge access, and final submission checks remain open. Source research may inform later work; it is not an additional feature or evidence claim for this submission.
+The fifteen reviewed records satisfy the adjusted dataset condition. Expanded manual live WhatsApp checks passed on September 20, 2026. The demo was converted to MP4 and uploaded September 21. M4 submission completed September 21, 2026; playback, judge-access, and final submission checks are recorded in the completed submission checklist. Source research may inform later work; it is not an additional feature or evidence claim for this submission.
